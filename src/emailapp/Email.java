@@ -8,8 +8,8 @@ public class  Email {
     private String lastName;
     private String password;
     private String department;
-//    private int defaultPasswordLength = 9;
-    private int mailBoxCapacity;
+    private String email;
+    private int mailBoxCapacity = 500;
     private String alternateEmail;
 
 //    constructor to receive first and last name
@@ -22,6 +22,11 @@ public class  Email {
         this.department = setDept();
         System.out.println("Department: " + this.department);
 
+        //    Generate email
+        email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@" + department + ".mycompany.com";
+        System.out.println("Your email is: " + email);
+
+//        Generate password
         this.password = randomPassword(10);
         System.out.println("Your password is: " + this.password);
     }
@@ -52,9 +57,24 @@ public class  Email {
         }
         return new String(password);
     }
-//    set the mailbox capacity
 
+    //    set as public API
+//    set the mailbox capacity
+    public void setMailBoxCapacity(int capacity){
+        this.mailBoxCapacity = capacity;
+    }
 //    set the alternate email
+    public void setAlternateEmail(String altEmail){
+        this.alternateEmail = altEmail;
+    }
 
 //    change password
+    public void changePassword(String password){
+        this.password = password;
+    }
+
+//    Public methods to access the properties
+    public int getMailBoxCapacity(){ return mailBoxCapacity; }
+    public String getAlternateEmail(){ return alternateEmail; }
+    public String getPassword(){ return password; }
 }
