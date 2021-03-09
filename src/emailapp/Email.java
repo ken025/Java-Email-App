@@ -17,14 +17,14 @@ public class  Email {
 //  'this' refers to the class level variable
         this.firstName = firstName;
         this.lastName = lastName;
-        System.out.println("Email Created: " + firstName + " " + lastName );
+//        System.out.println("Email Created: " + firstName + " " + lastName );
 
         this.department = setDept();
-        System.out.println("Department: " + this.department);
+//        System.out.println("Department: " + this.department);
 
         //    Generate email
         email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@" + department + ".mycompany.com";
-        System.out.println("Your email is: " + email);
+//        System.out.println("Your email is: " + email);
 
 //        Generate password
         this.password = randomPassword(10);
@@ -77,4 +77,11 @@ public class  Email {
     public int getMailBoxCapacity(){ return mailBoxCapacity; }
     public String getAlternateEmail(){ return alternateEmail; }
     public String getPassword(){ return password; }
+
+//    Print user's info
+    public String showInfo(){
+        return "DISPLAY NAME: " + firstName + " " + lastName +
+                "\nCOMPANY EMAIL: " + email +
+                "\nMAILBOX CAPACITY: " + mailBoxCapacity;
+    }
 }
